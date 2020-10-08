@@ -79,6 +79,9 @@ class App
     @$finish.on "click", @onClickFinish
     @$nameTag.on "click", => @getName true
 
+    @$question = window.location.search.substr(1) or 'default'
+
+    @setupQuestion()
     @getName()
 
     window.requestAnimationFrame? @onFrame
@@ -102,6 +105,11 @@ class App
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
     canvas
+  
+  setupQuestion: ->
+    question = window.location.search.substr(1) or 'default'
+    $('.reference-screenshot').css 'background-image',  'url(assets/references/' + question + '.png)'
+    $('.instructions').attr 'src', 'assets/instructions/' + question + '.html'
 
   getName: (forceUpdate) ->
     name = (not forceUpdate and localStorage["name"]) || prompt "What's your name?"
