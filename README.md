@@ -7,20 +7,22 @@
 
 ## How to Use
 * Grab the contents of the [`dist/`](https://github.com/codeinthedark/editor/tree/master/dist) folder, or download [this zip](https://github.com/codeinthedark/editor/releases/download/v0.1.0/editor.zip). All contestants should be given a copy of the editor.
-* Replace `assets/page.png` in the editor files with a screenshot of the page that is to be built in the competition. 
+* Add an image file `assets/references/[question-name].png` in the editor files with a screenshot of the page that is to be built in the competition. 
 * Add any extra assets (e.g. images) that are required to build the page in the `assets/` folder.
-* Edit the `assets/instructions.html` file with information about the extra assets and their dimensions.
+* Create `assets/instructions/[question-name].html` file with information about the extra assets and their dimensions.
+* Go to question page in `http://localhost:9000/?[question-name]`
 
 ## Developing
 Here's how to install the dependencies and run the editor locally:
 ```bash
+$ nvm use 8.16.2
 $ npm install
-$ ./node_modules/.bin/gulp serve
+$ npm start
 ```
 
 To build the editor, run:
 ```bash
-$ gulp dist
+$ npm build
 ```
 This will compile all scripts and styles and inline them into a single html file in the `dist/` folder. It will also create a `dist/assets/` folder, which separately contains the instructions and page screenshot so that they can easily be changed between different rounds of the competition.
 
