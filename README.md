@@ -22,6 +22,7 @@ $ npm run start
 
 To build the editor, run:
 ```bash
+$ nvm use 8.16.2
 $ npm run build
 ```
 This will compile all scripts and styles and inline them into a single html file in the `dist/` folder. It will also create a `dist/assets/` folder, which separately contains the instructions and page screenshot so that they can easily be changed between different rounds of the competition.
